@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contatos.Pages.EventoEdicaoPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Edição de Eventos" />
+            <StackLayout Margin="20"
+                     VerticalOptions="StartAndExpand">
+                
+
+                <Label Text="Nome"/>
+                <Entry x:Name="txtNome" Placeholder="Digite o nome"
+                   Text="{Binding Nome}"/>
+
+
+                <Label Text="Local"/>
+                <Entry  Placeholder="Digite o local"
+                   Text="{Binding Local}"/>
+
+
+                <Label Text="Data"/>
+                <DatePicker x:Name="DataPicker" Date="{Binding Data}"/>
+
+                <Label Text="Hora Inicio"/>
+                <TimePicker x:Name="HoraInicioPicker" Time="{Binding HoraInicio}"/>
+
+                <Label Text="Hora Termino"/>
+                <TimePicker x:Name="HoraTerminoPicker" Time="{Binding HoraTermino}"/>
+
+
+                <Label Text="Observação"/>
+                <Editor x:Name="txtObservacao" 
+                    HeightRequest="80"
+                    Text="{Binding Anotacoes}"/>
+
+                <Label Text="Status"/>
+                <Picker x:Name="PickerStatus" SelectedItem="{Binding Status}" HorizontalOptions="FillAndExpand">
+                    <Picker.Items>
+                        <x:String>Ocupado</x:String>
+                        <x:String>Disponivel</x:String>
+                        <x:String>Provisório</x:String>
+                        <x:String>Atividade Externa</x:String>
+
+                    </Picker.Items>
+                </Picker>
+
+
+                <Button x:Name="btnSalvar" 
+                    Text="Salvar"
+                    Clicked="btnSalvar_Clicked"/>
+
+                <Button x:Name="btnCancelar"
+                    Text="Cancelar"
+                    Clicked="btnCancelar_Clicked"/>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
